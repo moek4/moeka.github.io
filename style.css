@@ -57,20 +57,14 @@ table {
     *zoom: 1;
 }
 
-/*font*/
-
-
+/* font */
 @font-face {
     font-family: 'montserratbold';
     src: url('font/montserrat-bold-webfont.woff2') format('woff2'),
-         url('font/montserrat-bold-webfont.woff') format('woff');
+         url('font/montserrat-bold-webfont.woff'), format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
-
-
-
 
 @font-face {
     font-family: 'montserratitalic';
@@ -78,221 +72,136 @@ table {
          url('font/montserrat-italic-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
-
 }
 
-/*css dasar*/
+/* CSS DASAR */
 
 body{
-	font: 16px/20px arial, sans-serif;
-	background-color: #0c304a;
-	
+    background-color: #0c304a;
+    font-family: montserrat;
 }
 
-.container {
-	width: 960px;
-	height: 550px;
-	background-color: white;
-	margin:50px auto;
-	box-sizing: border-box;
-	border-radius: 20px;
+.container{
+    
+    display: grid;
+    
+    box-sizing: border-box;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'aside'
+        'main'
+        'footer'
+        ;
+    
 }
 
-.sidebar{
-	box-sizing: border-box;
-	
-	border-radius: 20px 0 0 20px;
+.aside, .main, .footer{
+    padding: 20px;
+    box-sizing: border-box;
 
-	width: 270px;
-	height: 550px;
-	box-sizing: border-box;
-	float: left;
-	padding: 30px;
-	position: relative;
-	background-color: #7cb278;
-	box-shadow: 20px 0px 10px -5px #a7e2c3;
+    justify-content: center;
+}
+/* aside (samping) */
+.aside{
+    grid-area: aside;
+    background-color: #7cb278;
+    text-align: center;
+    box-sizing: border-box;
+}
+.aside h1{
+    margin: 30px auto;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: montserrat;
+    color: white;
 }
 
-.sidebar h1{
-	font-size: 18px;
-	font-weight: bold;
-	font-family: montserratbold;
-	text-align: center;
-	color: white;
+.aside img{
+    max-width: 130px;
+    max-height: 130px;
+    
+    border-radius: 50%;
+    border: 10px solid white;
 }
 
-.sidebar .foto {
-	width: 150px;
-	height: 150px;
-	border-radius: 50%;
-	margin: 20px auto;
-	box-sizing: border-box;
-	background: linear-gradient(-130deg, #a1d9bc , white );
-
+.aside p{
+    margin: 30px 30px;
+    font-size: 14px;
+    font-weight: normal;
+    color: white;
+    line-height: 1.2;
 }
 
-.sidebar .foto img{
-	width: 130px;
-	height: 130px;
-	border-radius: 50%;
-	position: absolute;
-	right: 70px;
-	top: 80px;
-
+.social ul li{
+    display: inline-block;
+    margin: auto 10px;
+    box-sizing: border-box;
 }
 
-.sidebar p {
-	text-align: center;
-	margin-bottom: 20px;
-	font-size: 14px;
-	color: white;
-	font-family: montserrat, arial;
-	font-weight: normal;
-
+.ig, .wa, .mail, .tw{
+    background-size: cover;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-indent: -9999px;
 }
-
-.social {
-	text-align: center;
-}
-
-.social a{
-	margin: 0 5px;
-}
-
-/*social media*/
 .ig{
-	width: 30px;
-	height: 30px;
-	background-image: url(img/IG.png);
-	background-repeat: no-repeat;
-	display: inline-block;
-	background-size: cover;
-	text-indent: -9999px;
-	filter: grayscale(100%);
-}
-
-.ig:hover, .wa:hover, .gmail:hover, .twitter:hover {
-	filter: invert(70%);
+    background-image: url(img/IG.png);
 }
 
 .wa{
-	width: 30px;
-	height: 30px;
-	background-image: url(img/WA.png);
-	background-repeat: no-repeat;
-	display: inline-block;
-	background-size: cover;
-	text-indent: -9999px;
+    background-image: url(img/WA.png);
 }
 
-.gmail{
-	width: 30px;
-	height: 30px;
-	background-image: url(img/EMAIL.png);
-	background-repeat: no-repeat;
-	display: inline-block;
-	background-size: cover;
-	text-indent: -9999px;
+.mail{
+    background-image: url(img/EMAIL.png);
 }
 
-.twitter{
-	width: 30px;
-	height: 30px;
-	background-image: url(img/TWITTER.png);
-	background-repeat: no-repeat;
-	display: inline-block;
-	background-size: cover;
-	text-indent: -9999px;
+.tw{
+    background-image: url(img/TWITTER.png);
 }
+.flex-social{
+    display: flex;
+    justify-content: center;
+}
+/* akhir dari aside */
 
-.menus{
-	
-	margin-top: 30px;
-	width: 120px;
-	margin: 25px auto;
-	
-	box-sizing: border-box;
-}
-.menus img{
-	width: 20px;
-	height: 20px;
-	padding-right: 10px;
-}
-
-.menus a{
-	text-decoration: none;
-	font-size: 14px;
-	font-family: montserrat;
-	color: white;
-}
-
-.menu1, .menu2, .menu3, .menu4, .menu5{
-	height: 28px;
-	margin: 4px auto;
-	box-sizing: border-box;
-	position: relative;
-	padding-left: 5px;
-	border-radius: 7px;
-}
-
-.menu1 img, .menu2 img, .menu3 img, .menu4 img, .menu5 img{margin-top: 4px;}
-.menu1 a, .menu2 a, .menu3 a, .menu4 a, .menu5 a{
-	position: absolute;
-	top: 5px;
-}
-
-.menu1:hover, .menu2:hover, .menu3:hover, .menu4:hover, .menu5:hover{
-	background-color: #333;
-}
-
+/* main */
 .main{
-	background-color: #a7e2c3;
-	width: 690px;
-	height: 300px;
-	float: right;
-	padding: 25px;
-	box-sizing: border-box;
-	border-radius: 0 20px 0 0;
-	border-bottom: 2px solid #c8f2dc;
-
+    grid-area: main;
+    background-color: #a7e2c3;
+    display: flex;
+    justify-content: center;   
+    border-bottom: 2px solid white;
+}
+.item1 h1{
+    font-weight: bold;
+    font-size: 30px;
+}
+.item1{
+    padding-right: 20px;
+    color: #0c304a;
 }
 
-.main img{
-	float: right;
-	margin-left: 25px;
-	border-radius: 20px;
+.item1 p{
+    margin-top: 20px;
+    line-height: 1.2;
+}
+.item2 img{
+    border-radius: 20px;
+    background-size: cover;
+    
 }
 
-.main h2{
-	font-family: montserrat;
-	font-weight: bold;
-	font-size: 30px;
-	color: #0c304a;
+/* akhir dari main */
+
+.footer{
+    grid-area: footer;
+    background-color: #a7e2c3;
 }
 
-.main p{
-	margin-top: 20px;
-	font-family: montserrat;
-	color: #0c304a;
-}
-
-.footer h3{
-	margin-bottom: 20px;
-	font-family: montserratitalic;
-	font-weight: bold;
-
-}
-.footer {
-	background-color: #a7e2c3;
-	width: 690px;
-	height: 250px;
-	float: right;
-	padding: 25px;
-	box-sizing: border-box;
-	border-radius: 0 0 20px 0;
-	font-family: montserrat;
-	color: #0c304a;
-
+.footer p{
+    margin: 20px auto;
 }
 
 .footer ul{
@@ -310,34 +219,121 @@ li span {
 	font-weight: normal;
 }
 
-
-.footer p, .footer a{
-	margin-top: 20px;
-	font-size: 12px;
-
-}
-
-.footer p a{
-	text-decoration: none;
-	font-family: montserratitalic;
-	font-weight: bold;
-}
-
-
-
+/* copyright-start */
+/* .copyright{
+    text-align: center;
+    width: 100%;
+    font-size: 14px;
+} */
 
 .copyright{
-	color: #5487ac;
-	text-align: center;
-	font-size: 12px;
-	width: 960px;
-	float: left;
-	}
-.copyright p {
-	margin-top: 20px;
-	}
+    display: grid;
+    grid-template-columns: 1fr;
+    
+    text-align: center;
+}
 
+.copyright p{
+    color: #5487ac;
+}
 
-	/**/
+/* Responsive Breakpoint */
+/* * DESKTOP VERSIONS (hanya terpengaruh dengan dekstop ) */
+@media screen and (min-width: 992px) {
+    
+    .container{
+        margin: 50px auto;
+        width: 70%;
+        grid-template-columns: 1fr 2.5fr;
+        grid-template-areas: 
+    'aside main main'
+    'aside footer footer'
+    ;
+        grid-template-rows: min-content 1fr auto;
+    }
 
-	
+    .aside{
+        border-radius: 20px 0 0 20px;
+        box-shadow: 20px 0px 10px -5px #a7e2c3;
+    }
+    .main{
+        z-index: -1;
+        border-radius: 0 20px 0 0;
+    }
+
+    .footer{
+        border-radius: 0 0 20px 0;
+    }
+    
+
+}
+
+@media screen and (max-width: 992px) {
+    
+    .aside, .main, .footer{
+        max-width: 992px;
+    }
+
+    .aside h1{
+        margin: 50px auto;
+    }
+    .main{  
+        border-top: 2px solid white;
+    }
+    .main h1{  
+        text-align: center;
+        font-size: 20px;
+    }
+    .footer p{
+        text-align: center;
+    }
+    .footer{
+        background-color: #7cb278;
+
+    }
+    /* .footer .list{
+        max-width: 80%; 
+    } */
+    .copyright{
+        margin: 50px auto;
+    }
+}
+
+@media screen and (max-width:576px) {
+    .main img{
+        display: none;
+        flex-wrap: wrap;
+    }
+    .footer ul{
+        grid-template-columns: auto;
+    }
+}
+
+/* apple watch */
+/* @media screen and (max-width: 162px) {
+    .aside{
+        margin: 0;
+        padding: 0;
+    }
+
+    .aside h1{
+        margin: 10px auto;
+        font-size: 16px;
+    }
+    .aside img{
+        width: 85px;
+        height: 85px;
+        border: 5px solid white;
+    }
+    .aside p{
+        margin: 15px auto;
+        font-size: 10px;
+    }
+
+    .copyright p{
+        font-size: 10px;
+    }
+    .main .item2 img{
+        width: 90px;
+    }
+} */
